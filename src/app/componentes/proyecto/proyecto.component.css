@@ -5,7 +5,15 @@
 
 .contenedor{
     width: auto;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
 }
+
+h1{
+    font-family: 'Dosis', sans-serif;
+}
+
+
 
 .parte1, .parte2{
     display: inline-block;

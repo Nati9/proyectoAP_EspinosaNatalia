@@ -4,6 +4,7 @@
 
 footer{
     color: #fefefe;
+    font-family: 'Dosis', sans-serif;
     font-size: 14px;
     display: flex;
     flex-direction: column;
