@@ -19,20 +19,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("explab")
+@RequestMapping("explab/")
 @CrossOrigin(origins = "https://nataliaespinosa-ap.web.app/")
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
     
     
-    @GetMapping("/lista")
+    @GetMapping("lista")
     public ResponseEntity <List <Experiencia>> list(){
         List <Experiencia> list = sExperiencia.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @PostMapping("/create")
+    @PostMapping("create")
     public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoexp){
         if(StringUtils.isBlank(dtoexp.getNombreE()))
             
@@ -47,7 +47,7 @@ public class CExperiencia {
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
     }
     
-    @PutMapping("/update/{id}")
+    @PutMapping("update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperiencia dtoexp){
         if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.BAD_REQUEST);
@@ -67,7 +67,7 @@ public class CExperiencia {
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
     }
     
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
           if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.BAD_REQUEST);
@@ -77,7 +77,7 @@ public class CExperiencia {
           return new ResponseEntity(new Mensaje("Experiencia eliminada"), HttpStatus.OK);
     }
     
-    @GetMapping("/detail/{id}")
+    @GetMapping("detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
         if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.NOT_FOUND);

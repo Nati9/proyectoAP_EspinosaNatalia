@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
-    @GetMapping("/personas/traer")
+    @GetMapping("personas/traer")
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/personas/crear")
+    @PostMapping("personas/crear")
     
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
@@ -34,7 +34,7 @@ public class PersonaController {
     }
     
      @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/personas/borrar/{id}")
+    @DeleteMapping("personas/borrar/{id}")
     
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
@@ -42,7 +42,7 @@ public class PersonaController {
     }
     
      @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/personas/editar/{id}")
+    @PutMapping("personas/editar/{id}")
     
     public Persona editPersona(@PathVariable Long id, 
                                 @RequestParam ("nombre") String nuevoNombre, 
@@ -60,7 +60,7 @@ public class PersonaController {
         return persona;
     }
     
-    @GetMapping("/personas/traer/perfil")
+    @GetMapping("personas/traer/perfil")
     
     public Persona findPersona(){
         return ipersonaService.findPersona((long)1);
