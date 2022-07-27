@@ -4,12 +4,13 @@
             <img src="../../../assets/Logos/APLogo.png" id="logoAP">
         </div>
             <div class="redes">
-                <a href=""> <img src="../../../assets/Logos/linkedin.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/natalia-espinosa-754869215/"> <img src="../../../assets/Logos/linkedin.png" alt=""></a>
                 <a href=""> <img src="../../../assets/Logos/twitter.png" alt=""></a>
                 <a href="https://github.com/Nati9"> <img src="../../../assets/Logos/github.png" alt=""></a>
                 <a href="https://www.facebook.com/Natuu.espinosa"> <img src="../../../assets/Logos/facebook.png" alt=""></a>
                 <a href="https://www.instagram.com/nati.espinosa27/"> <img src="../../../assets/Logos/instagram.png" alt=""></a>
-                <button type="button" class="btn btn-outline-light" (click)="login()">Login </button>
+                <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf = "!isLogged">Ingresar</button>
+                <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf = "isLogged">Cerrar sesión </button>
             
             </div>
         

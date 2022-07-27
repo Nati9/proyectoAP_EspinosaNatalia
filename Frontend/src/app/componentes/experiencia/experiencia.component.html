@@ -1,29 +1,31 @@
 <div class="row">
-    <h1>
-        Experiencia Laboral
-    </h1>
-    <div class="col-lg-1"></div>
-    
-    <div class="col-lg-11"> 
-        <ul>
-            <li><h2>Excelencia Digital</h2> - <h3> Año: 2020</h3></li>
-            <p>Tareas: Desarrollo de frontend con el uso de Angular como framework. 
-               Antiguedad: 6 meses
-            </p>
-        </ul>
-        <ul>
-            <li><h2>Instituto Fénix</h2> - <h3>Actualidad</h3></li>
-            <p>Tareas: Enseñanza de materias como matemática e informática a alumnos de secundaria y universidad.
-                Antiguedad: 3 años
-            </p>
-        </ul>
-        <ul>
-            <li><h2>Proyecto de investigación CONICET</h2> - <h3>Actualidad</h3></li>
-            <p>Tareas: Elaboración de código en Arduino para controlar la temperatura de una incubadora para reptiles. Medición de humedad y pérdida de peso en agua.
-                Antiguedad: 6 meses.
-            </p>
-        </ul>
-        
+    <h1>Experiencia laboral</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
+    </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td>
+                        <h2>{{Experiencia.nombreE}}</h2>
+                    </td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-trash-fill"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

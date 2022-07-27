@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
@@ -18,6 +17,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { InterceptorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
+import { NewEducacionComponent } from './componentes/educacion/new-educacion.component';
+import { EditEducacionComponent } from './componentes/educacion/edit-educacion.component';
 
 
 @NgModule({
@@ -35,6 +39,10 @@ import { LoginComponent } from './componentes/login/login.component';
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
+    NewEducacionComponent,
+    EditEducacionComponent,
     
    
   ],
@@ -43,9 +51,11 @@ import { LoginComponent } from './componentes/login/login.component';
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [InterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

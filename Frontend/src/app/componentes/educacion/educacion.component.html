@@ -1,41 +1,31 @@
 <div class="row">
-    <h1>
-        Educación
-    </h1>
-    <div class="col-lg-1"></div>
-    
-    <div class="col-lg-11"> 
-        <ul>
-            <li><h2>Universidad Nacional de San Juan - Facultad de Ingeniería</h2> - <h3>2011</h3></li>
-            <p>Carrera: Bioingeniería.
-               Estado: Cursada finalizada.
-            </p>
-        </ul>
-        <ul>
-            <li><h2>Mujeres en Tecnología</h2> - <h3> 2022</h3></li>
-            <p>Carrera: Wordpress.
-               Estado: en curso.
-            </p>
-        </ul>
-        <ul>
-            <li><h2>Argentina Programa #YoProgramo</h2> - <h3> 2021</h3></li>
-            <p>Carrera: Desarrollador web full stack
-               Estado: en curso.
-            </p>
-        </ul>
-        <ul>
-            <li><h2>UTN - Regional Córdoba</h2> - <h3>2021</h3></li>
-            <p>Carrera: Diplomatura en nuevas tecnologías.
-               Estado: Graduado.
-            </p>
-        </ul>
-        
-        <ul>
-            <li><h2>Polo TIC Misiones</h2> - <h3> 2020</h3></li>
-            <p>Carrera: Desarrollador web javascript y python.
-               Estado: sin finalizar.
-            </p>
-        </ul>
+    <h1>Educación</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+            Nueva Educacion
+        </button>
+    </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of educ">
+                    <td>
+                        <h2>{{Educacion.nombreEdu}}</h2>
+                    </td>
+                    <td>{{Educacion.descripcionEdu}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash-fill"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>
