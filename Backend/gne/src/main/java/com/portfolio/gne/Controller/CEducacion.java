@@ -26,13 +26,13 @@ public class CEducacion {
     @Autowired
     SEducacion sEducacion;
     
-     @GetMapping("/lista")
+     @GetMapping("lista")
     public ResponseEntity <List <Educacion>> list(){
         List <Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @PostMapping("/create")
+    @PostMapping("create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoedu){
         if(StringUtils.isBlank(dtoedu.getNombreEdu()))
             
@@ -47,7 +47,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion agregada"), HttpStatus.OK);
     }
     
-    @PutMapping("/update/{id}")
+    @PutMapping("update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoedu){
         if(!sEducacion.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.BAD_REQUEST);
@@ -67,7 +67,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
     }
     
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
           if(!sEducacion.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.BAD_REQUEST);
@@ -77,7 +77,7 @@ public class CEducacion {
           return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
     }
     
-    @GetMapping("/detail/{id}")
+    @GetMapping("detail/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id") int id){
         if(!sEducacion.existsById(id))
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.NOT_FOUND);
