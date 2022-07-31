@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL: string = environment.baseUrl;
+  authURL= 'http://localhost:8080/';
 
   constructor(private httpClient: HttpClient) { }
 

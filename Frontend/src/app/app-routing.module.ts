@@ -5,6 +5,7 @@ import { NewEducacionComponent } from './componentes/educacion/new-educacion.com
 import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
 import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { NewHysComponent } from './componentes/hys/new-hys.component';
 import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
 {path: 'login', component: LoginComponent},
 {path: 'nuevaexp', component: NewExperienciaComponent},
 {path: 'nuevaedu', component: NewEducacionComponent},
+{path: 'nuevaskill', component: NewHysComponent },
 {path: 'editexp/:id', component: EditExperienciaComponent},
 {path: 'editedu/:id', component: EditEducacionComponent}
 ];
