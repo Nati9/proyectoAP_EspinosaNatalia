@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://backend-nataliae.herokuapp.com/'
+  baseUrl: 'http//localhost:8080/'
 };
 
 /*
