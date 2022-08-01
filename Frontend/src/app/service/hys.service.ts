@@ -9,7 +9,7 @@ import { hys } from '../model/hys';
   providedIn: 'root'
 })
 export class HySService {
-  URL = 'http://localhost:8080/';
+  URL = 'https://backend-nataliae.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

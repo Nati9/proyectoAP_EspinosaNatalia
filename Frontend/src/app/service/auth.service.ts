@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL= 'http://localhost:8080/';
+  authURL= 'https://backend-nataliae.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
