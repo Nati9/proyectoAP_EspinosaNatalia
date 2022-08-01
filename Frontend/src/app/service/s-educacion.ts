@@ -8,27 +8,27 @@ import { Educacion } from "../model/educacion";
   })
 export class SEducacionService {
 
-    expURL = 'https://backend-nataliae.herokuapp.com/';
+    expURL = 'https://backend-nataliae.herokuapp.com/edu/';
 
     constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.expURL + 'edu/lista');
+    return this.httpClient.get<Educacion[]>(this.expURL + 'lista');
   }
 
   public detail(id: number): Observable<Educacion>{
-    return this.httpClient.get<Educacion>(this.expURL + `edu/detail/${id}`);
+    return this.httpClient.get<Educacion>(this.expURL + `detail/${id}`);
   } 
 
   public save(educacion: Educacion): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'edu/create', educacion);
+    return this.httpClient.post<any>(this.expURL + 'create', educacion);
   }
 
   public update(id: number, educacion: Educacion): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `edu/update/${id}`, educacion);
+    return this.httpClient.put<any>(this.expURL + `update/${id}`, educacion);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `edu/delete/${id}`);
+    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
   }
 }

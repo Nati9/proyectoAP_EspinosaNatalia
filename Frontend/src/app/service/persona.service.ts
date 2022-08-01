@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'https://backend-nataliae.herokuapp.com/';
+  URL = 'https://backend-nataliae.herokuapp.com/personas/';
 
   constructor(private http: HttpClient) { }
 
   public getPersona(): Observable<persona>{
-    return this.http.get<persona>(this.URL + 'personas/traer/perfil');
+    return this.http.get<persona>(this.URL + 'traer/perfil');
   }
 }
