@@ -1,0 +1,8 @@
+{
+    "/personas/traer/perfil": {
+               "target": "https://backend-nataliae.herokuapp.com",
+               "secure": false,
+               "loglevel":"debug"
+               }
+}
+
